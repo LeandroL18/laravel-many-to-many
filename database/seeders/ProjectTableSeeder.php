@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
+use App\Models\Type;
 
 class ProjectTableSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class ProjectTableSeeder extends Seeder
         -> make()
         ->each(function($project){
             $type= Type :: inRandomOrder() -> first();
-            $project -> type() -> associate($ype);
+            $project -> type() -> associate($type);
             $project -> save();
         });
     }
