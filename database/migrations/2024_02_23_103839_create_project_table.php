@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('project', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
 
             $table->string('nome_autore',60);
-            $table->string('titolo',60) -> unique();
+            $table->string('titolo',60);
             $table->string('descrizione') -> nullable();
 
             $table->timestamps();
