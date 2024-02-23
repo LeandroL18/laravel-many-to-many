@@ -10,6 +10,6 @@ class Project extends Model
     use HasFactory;
 
     public function type(){
-        return $this -> hasOne(Type :: class);
+        return $this -> belongsTo(Type :: class);
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('types', function (Blueprint $table) {
             $table->id();
 
-            $table->string('typology',128);
+            $table->string('typology',64);
 
             $table->timestamps();
         });

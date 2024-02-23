@@ -15,6 +15,13 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        Project::factory() -> count(20) -> create();
+        Project::factory() 
+        -> count(20) 
+        -> make()
+        ->each(function($project){
+            $type= Type :: inRandomOrder() -> first();
+            $project -> type() -> associate($ype);
+            $project -> save();
+        });
     }
 }
