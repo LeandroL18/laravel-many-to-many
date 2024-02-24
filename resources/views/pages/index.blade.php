@@ -6,8 +6,9 @@
     <h1>Project:</h1>
     <ol>
         @foreach ($projects as $project)
-        <li>
-            {{$project -> titolo}}
+        <li class="m_b">
+            <span class="bold">{{$project -> titolo}} :</span> 
+            {{ $project -> type -> typology}}
         </li>
         @endforeach
     </ol>
