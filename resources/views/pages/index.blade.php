@@ -12,4 +12,6 @@
         </li>
         @endforeach
     </ol>
+
+    <a href="{{ route('type.index') }}">VISUALIZZA LE TIPOLOGIE</a>
 @endsection
