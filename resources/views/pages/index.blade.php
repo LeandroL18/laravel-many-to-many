@@ -7,8 +7,18 @@
     <ol>
         @foreach ($projects as $project)
         <li class="m_b">
+
             <span class="bold">{{$project -> titolo}} :</span> 
-            {{ $project -> type -> typology}}
+
+            {{ $project -> type -> typology}} <br>
+
+            Technologies: 
+            <span>
+                @foreach ($project -> technologies as $technology)
+                    {{ $technology -> name }}
+                @endforeach
+            </span>
+
         </li>
         @endforeach
     </ol>
