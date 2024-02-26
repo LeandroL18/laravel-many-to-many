@@ -3,7 +3,7 @@
     <title>Create</title>
 @endsection
 @section('content')
-   <h1>NEW PROJECT</h1>
+   <h1>NUOVO PROGETTO</h1>
     <form action="{{ route('store') }}" method='POST'>
     
         @csrf

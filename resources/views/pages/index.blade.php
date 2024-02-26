@@ -5,7 +5,7 @@
 @section('content')
     <a href="{{ route('create') }}">CREA PROGETTO</a>
 
-    <h1>Project:</h1>
+    <h1>PROGETTI:</h1>
     <ol>
         @foreach ($projects as $project)
         <li class="m_b">
@@ -17,9 +17,11 @@
             Technologies: 
             <span>
                 @foreach ($project -> technologies as $technology)
-                    {{ $technology -> name }}
+                    {{ $technology -> name }},
                 @endforeach
             </span>
+
+            <a href="{{ route('edit', $project -> id) }}">Modifica</a>
 
         </li>
         @endforeach
