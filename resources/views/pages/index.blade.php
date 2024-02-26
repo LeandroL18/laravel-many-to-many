@@ -3,6 +3,8 @@
     <title>Home</title>
 @endsection
 @section('content')
+    <a href="{{ route('create') }}">CREA PROGETTO</a>
+
     <h1>Project:</h1>
     <ol>
         @foreach ($projects as $project)
