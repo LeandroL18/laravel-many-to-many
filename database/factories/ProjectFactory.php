@@ -20,6 +20,7 @@ class ProjectFactory extends Factory
             'nome_autore'=>fake()->name($gender = null),
             'titolo'=>fake()->company,
             'descrizione'=>fake()->paragraph(),
+            'immagine'=> null,
         ];
     }
 }

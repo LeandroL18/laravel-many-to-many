@@ -18,7 +18,8 @@ return new class extends Migration
 
             $table->string('nome_autore',60);
             $table->string('titolo',60);
-            $table->string('descrizione') -> nullable();
+            $table->string('descrizione',256) -> nullable();
+            $table->string('immagine',128) -> nullable();
 
             $table->timestamps();
         });

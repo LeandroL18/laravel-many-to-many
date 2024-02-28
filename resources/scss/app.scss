@@ -6,11 +6,13 @@
 
 .bold{
     font-weight: bold;
+    border:none;
+    text-decoration: underline;
 }
 
 a{
     text-decoration: none;
     color: black;
     border: 1px solid black;
-    padding: 5px;
+    padding: 4px;
 }

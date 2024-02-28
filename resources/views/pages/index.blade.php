@@ -10,11 +10,11 @@
         @foreach ($projects as $project)
         <li class="m_b">
 
-            <span class="bold">{{$project -> titolo}} :</span> 
+            <a href="{{ route('show', $project -> id) }}" class="bold">{{$project -> titolo}} :</a> 
 
             {{ $project -> type -> typology}} <br>
 
-            Technologies: 
+            Tecnologie: 
             <span>
                 @foreach ($project -> technologies as $technology)
                     {{ $technology -> name }},

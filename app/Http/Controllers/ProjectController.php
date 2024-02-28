@@ -12,7 +12,7 @@ class ProjectController extends Controller
 {
     public function index(){
 
-        $projects = project :: all();
+        $projects = Project :: all();
         return view('pages.index', compact('projects'));
     }
 
@@ -21,6 +21,12 @@ class ProjectController extends Controller
         $types = Type :: all();
         $technologies = Technology :: all();
         return view('pages.create', compact('types','technologies'));
+    }
+
+    public function show($id){
+
+        $project = Project :: find($id);
+        return view('pages.show', compact('project'));
     }
 
     public function store(Request $request){
@@ -65,6 +71,6 @@ class ProjectController extends Controller
 
         $project -> technologies() -> sync($data['technology_id']);
 
-        return redirect() -> route('index');
+        return redirect() -> route('show', $project->id);
     }
 }
