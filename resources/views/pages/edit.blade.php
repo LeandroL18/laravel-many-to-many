@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <h1>MODIFICA PROGETTO</h1>
-    <form action="{{ route('update', $project -> id) }}" method='POST'>
+    <form action="{{ route('update', $project -> id) }}" method='POST' enctype="multipart/form-data">
     
         @csrf
         @method('PUT')
@@ -29,6 +29,9 @@
                 </option>
             @endforeach
         </select><br><br>
+
+        <label for="immagine">Immagine</label>
+        <input type="file" name="immagine" id="immagine" accept="immagine/*"><br><br>
 
         <label>Scegli le tecnologie:</label><br>
         @foreach ($technologies as $technology)

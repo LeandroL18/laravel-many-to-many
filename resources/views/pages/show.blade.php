@@ -16,6 +16,9 @@
         @endforeach
     </span><br><br>
 
+    @if ($project -> immagine)
+        <img src="{{ asset('storage/' . $project -> immagine) }}" alt="img" width="200px"><br><br>
+    @endif
     <a href="{{ route('edit', $project -> id) }}">MODIFICA</a><br><br>
 
     <a href="{{ route('index') }}">TORNA ALLA HOME</a>
