@@ -3,11 +3,18 @@ import axios from 'axios'
 
 export default{
   name:'ApiContent',
+  data(){
+    return{
+      technologies: []
+    }
+  },
+
   mounted(){
-    axios.get('http://localhost:8000/api/v1/test')
+    axios.get('http://localhost:8000/api/v1/technologies')
     .then(res => {
       const data = res.data;
-      console.log(data);
+        this.technologies = data.technologies;
+        console.log("technologies:", this.technologies)
     })
     .catch(err => {
       console.err(err);
@@ -17,7 +24,12 @@ export default{
 </script>
 
 <template>
-  <h1>Hello</h1>
+  <h1>Tecnologie</h1>
+  <ul>
+    <li v-for="technology in technologies" :key="technology.id">
+        {{ technology.name }}
+    </li>
+  </ul>
 </template>
 
 <style scoped>
